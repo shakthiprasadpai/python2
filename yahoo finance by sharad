@@ -1,0 +1,88 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "private_outputs": true,
+      "provenance": [],
+      "authorship_tag": "ABX9TyPjzizoiuy7LJyZXZsjZowh",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/shakthiprasadpai/python2/blob/circleci-project-setup/yahoo%20finance%20by%20sharad\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "-G9bOAhgpLGT"
+      },
+      "outputs": [],
+      "source": [
+        "pip install yfinance\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [],
+      "metadata": {
+        "id": "058EdouL1mkN"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "pip install pandas"
+      ],
+      "metadata": {
+        "id": "ds8uLyE11r25"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import pandas as pd\n",
+        "import yfinance as yf\n",
+        "from datetime import date, datetime, timedelta\n",
+        "\n",
+        "today = date.today()\n",
+        "today_str = today.strftime(\"%Y-%m-%d\")\n",
+        "\n",
+        "d2 = date.today() - timedelta(720)\n",
+        "d2_str = d2.strftime('%Y-%m-%d')\n",
+        "\n",
+        "start_date = d2_str  # Use d2_str instead of d2\n",
+        "end_date = today_str  # Assuming you want to download data up to today\n",
+        "\n",
+        "data = yf.download(\"AAPL\", start=start_date, end=end_date, progress=False)\n",
+        "data['date'] = data.index\n",
+        "data = data[['date', 'Open', 'High', 'Low', 'Close', 'Adj Close', 'Volume']]\n",
+        "data.reset_index(drop=True, inplace=True)\n",
+        "print(data.head)"
+      ],
+      "metadata": {
+        "id": "nkWy2S2_qQlA"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
