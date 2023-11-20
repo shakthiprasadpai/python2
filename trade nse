@@ -1,0 +1,97 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "private_outputs": true,
+      "provenance": [],
+      "authorship_tag": "ABX9TyM6S6Y5SdjE9y2ulRPLftJ/",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/shakthiprasadpai/python2/blob/circleci-project-setup/trade%20nse\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "q-JH8C42aoGJ"
+      },
+      "outputs": [],
+      "source": [
+        "pip install nsepython"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "import requests\n",
+        "import pandas as pd\n",
+        "\n",
+        "def fetch_equity_stock_indices():\n",
+        "    url = 'https://www.nseindia.com/api/equity-stockIndices'\n",
+        "    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'}\n",
+        "    response = requests.get(url, headers=headers)\n",
+        "    data = response.json()\n",
+        "    return pd.DataFrame(data['data'])\n",
+        "\n",
+        "df = fetch_equity_stock_indices()\n",
+        "print(df)"
+      ],
+      "metadata": {
+        "id": "7GiT98PvbNtj"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "dnRLLNr_j8_z"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n"
+      ],
+      "metadata": {
+        "id": "H5DMXKLVb6hd"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        ""
+      ],
+      "metadata": {
+        "id": "DpYG_e5Jcs1H"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
