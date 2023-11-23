@@ -1,0 +1,120 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "private_outputs": true,
+      "provenance": [],
+      "authorship_tag": "ABX9TyMuT/0j4IBJpVHFs7N6h4ZU",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/shakthiprasadpai/python2/blob/circleci-project-setup/nse%20data2\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "import requests\n",
+        "import pandas as pd\n",
+        "\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "gQXLhGKoeRL8"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "headers = {\n",
+        "    \"Accept\": \"application/json, text/javascript, */*; q=0.01\",\n",
+        "    \"Accept-Encoding\": \"gzip, deflate, br\",\n",
+        "    \"Accept-Language\": \"en-GB,en-US;q=0.9,en;q=0.8,kn;q=0.7,te;q=0.6\",\n",
+        "    \"Cookie\": \"nsit=J-rGNsZOTTfzN1UNpc8TZBeM; AKA_A2=A; defaultLang=en; ak_bmsc=691F9BCC42D193E4C9853C6B7B4D6CE1~000000000000000000000000000000~YAAQZNcLF9nCAd6LAQAAkHdp+xWIE6/y3/qTwY0c7mARUDoWXcTX3L5GfflJl0ZXTWdd7ieBDYU15icAGIH0+8EpDMmBFcaA38HysC9b172k2Aofi/hPBPMlR3JxI1AoCbrm94hmDmOcmNjEHodKCj11OvLm/DhOsdhWNJk/CmlZIcYQWcN+yL+v4p8LRThvZPA5QIAjejptJVvkyFl00uWWpxsfe59eSOSrgfsD4dyni0opMyc1D5VxeISRu565UL/PDprJsQVs3VkzcZk0fIHnS7verCa1zfVhhtEfI1JXayX0EY4sdJ4A02C4GHC7HzJtkBwV8HkDLbDMYW3gvcJEqLetnnsJSYuGk9XENRfizcLEUS+hnacqyUhzZs0oov+Q3UMP187aQWDQ7SebQnvh7hUIttWeyds4W9uFIfZNFrq+yw2OqjXkYq29BjJArjGE44vNjwh/InsRJrBBGgbMLJIepYsmlFoGWqyS7LSOnFOwbtTjWAy5Ywm1cVKQDjHd; _ga=GA1.1.583077225.1700730076; nseappid=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcGkubnS... (your complete headers here)\",\n",
+        "    \"Dnt\": \"1\"\n",
+        "}\n",
+        "\n",
+        "response = requests.get('https://www.nseindia.com/api/chart-databyindex?index=NIFTY%20BANK&indices=true&preopen', headers=headers)\n"
+      ],
+      "metadata": {
+        "id": "ilMJkdybf443"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "response.json()['graph data']\n"
+      ],
+      "metadata": {
+        "id": "mwF1-22ckd-E"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "banknifty=pd.DataFrame(response.json())['graphdata']\n"
+      ],
+      "metadata": {
+        "id": "SN8mIZSRk1Dj"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "banknifty.column =['timestamp', 'price']"
+      ],
+      "metadata": {
+        "id": "WpNPFUHFlZqQ"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "banknifty['timestamp']=pd.to_datetime(banknifty,['timestamp' ]) unit='ms'"
+      ],
+      "metadata": {
+        "id": "-JKdkLF4lbD-"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "banknifty.plot(x='timestamp'y='price')"
+      ],
+      "metadata": {
+        "id": "0qgj-Fj5lwvS"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
