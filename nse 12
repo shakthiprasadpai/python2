@@ -1,0 +1,72 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "private_outputs": true,
+      "provenance": [],
+      "authorship_tag": "ABX9TyNyJ1lYyF+2CKZQuRdWnfct",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/shakthiprasadpai/python2/blob/circleci-project-setup/nse%2012\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "to4FQLomF2jw"
+      },
+      "outputs": [],
+      "source": [
+        "from datetime import date"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from datetime import datetime\n",
+        "import time\n",
+        "\n",
+        "start_date = datetime(2018,12,1)\n",
+        "end_date = datetime.now()\n",
+        "\n",
+        "delta = end_date - start_date\n",
+        "\n",
+        "print(f\"{delta.days} days, {delta.seconds//3600} hours, and {(delta.seconds//60)%60} minutes have passed since {start_date}.\")"
+      ],
+      "metadata": {
+        "id": "jdFMTJyNGH7f"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(globals())"
+      ],
+      "metadata": {
+        "id": "S7Ze63RoH3l9"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
