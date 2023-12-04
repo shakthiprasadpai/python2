@@ -1,0 +1,72 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "private_outputs": true,
+      "provenance": [],
+      "authorship_tag": "ABX9TyNw8+MQc5T0JV9ziiSmiMZ1",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/shakthiprasadpai/python2/blob/circleci-project-setup/nse14\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "8vdzEzIjW3s7"
+      },
+      "outputs": [],
+      "source": [
+        "pip install yfinance"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from datetime import datetime\n",
+        "import csv\n",
+        "import pandas as pd\n",
+        "import matplotlib.pyplot as plt\n",
+        "import numpy as np\n",
+        "import yfinance as yf\n",
+        "df=yf.download('ITC.NS',start=\"2009-01-02\",end=\"2019-10-20\")\n",
+        "print ('data')\n"
+      ],
+      "metadata": {
+        "id": "Mbg0lf98XLGK"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "df = pd.read_csv('ITC.CSV', encoding='utf8')\n",
+        "df.to_csv('ITC_modified.CSV', index=False, encoding='utf8')"
+      ],
+      "metadata": {
+        "id": "ToXiNtTrYk_y"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
