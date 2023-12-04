@@ -1,0 +1,231 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "private_outputs": true,
+      "provenance": [],
+      "toc_visible": true,
+      "authorship_tag": "ABX9TyP2zMr79QQ0zEQh4iQAGDRv",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/shakthiprasadpai/python2/blob/circleci-project-setup/nse%2017\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "to4FQLomF2jw"
+      },
+      "outputs": [],
+      "source": [
+        "from datetime import date"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from datetime import datetime\n",
+        "import time\n",
+        "\n",
+        "end_date = datetime.now()\n",
+        "\n",
+        "print(end_date)"
+      ],
+      "metadata": {
+        "id": "jdFMTJyNGH7f"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from datetime import date"
+      ],
+      "metadata": {
+        "id": "yqG2DDy8OOhF"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from re import A\n",
+        "from datetime import date\n",
+        "A_date = date(2022, 3, 2)"
+      ],
+      "metadata": {
+        "id": "S7Ze63RoH3l9"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(A_date)"
+      ],
+      "metadata": {
+        "id": "s0XFEN50PXkR"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "M_date=A_date.strftime('%M')"
+      ],
+      "metadata": {
+        "id": "r3yBTlUZPoxQ"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(M_date)"
+      ],
+      "metadata": {
+        "id": "1Hs-CU5zP86q"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "from datetime import datetime, timedelta\n",
+        "\n",
+        "pdate = datetime.now() - timedelta(days=14)"
+      ],
+      "metadata": {
+        "id": "i5wdvx8mRjyW"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(pdate)\n"
+      ],
+      "metadata": {
+        "id": "P6xaiDSBTPyo"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "ndate=datetime.now() + timedelta(days=20)"
+      ],
+      "metadata": {
+        "id": "hCymKfeGRzf3"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "pip install yfinance"
+      ],
+      "metadata": {
+        "id": "UjSv1BVlViQZ"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "pip install cartopy\n"
+      ],
+      "metadata": {
+        "id": "GV97n_jrG-Rk"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "pip install cartopy\n"
+      ],
+      "metadata": {
+        "id": "FJswldWnG48l"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [],
+      "metadata": {
+        "id": "Qvh7bdozGhFr"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "pip install matplotlib-venn"
+      ],
+      "metadata": {
+        "id": "vSJBQjIhGlP9"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        " from datetime import datetime\n",
+        " import cartopy\n",
+        " import pytz\n",
+        " import pandas as pd\n",
+        " import matplotlib.pyplot as plt\n",
+        " import numpy as np\n",
+        " import yfinance as yf\n",
+        "\n",
+        " data=yf.download('AAPL','startdate'==\"2010-10-12\",'enddate'==\"2013=10-12\",)\n",
+        " print(data)\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "-bB2T_AkDPh8"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "MRpsBjZRDP-N"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
